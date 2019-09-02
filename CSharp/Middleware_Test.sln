@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabbit_Producer", "Rabbit_Producer\Rabbit_Producer.csproj", "{8D722D50-FE78-4EEA-BE9E-83EF0F6A7A14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ_Producer", "RabbitMQ_Producer\RabbitMQ_Producer.csproj", "{8D722D50-FE78-4EEA-BE9E-83EF0F6A7A14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabbit_Consumer", "Rabbit_Consumer\Rabbit_Consumer.csproj", "{ED7045EE-24ED-4975-A97C-ED90315DE9E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ_Consumer", "RabbitMQ_Consumer\RabbitMQ_Consumer.csproj", "{ED7045EE-24ED-4975-A97C-ED90315DE9E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protobuf", "Protobuf\Protobuf.csproj", "{4B8D9A0C-8376-4BAE-802F-54CC76660D9D}"
 EndProject
