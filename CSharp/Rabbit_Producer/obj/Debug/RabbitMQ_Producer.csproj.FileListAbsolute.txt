@@ -1,0 +1,12 @@
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\RabbitMQ_Producer.exe.config
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\RabbitMQ_Producer.exe
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\RabbitMQ_Producer.pdb
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\Newtonsoft.Json.dll
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\RabbitMQ.Client.dll
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\Newtonsoft.Json.xml
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\bin\Debug\RabbitMQ.Client.xml
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\obj\Debug\RabbitMQ_Producer.csprojResolveAssemblyReference.cache
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\obj\Debug\RabbitMQ_Producer.exe
+E:\gl\CSharp\RabbitMQ_Producer\RabbitMQ_Producer\obj\Debug\RabbitMQ_Producer.pdb
