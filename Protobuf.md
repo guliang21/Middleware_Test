@@ -112,15 +112,45 @@ C# 下的 Protobuf 有 3 个版本：
 
 ```
 using Google.Protobuf;
+using System;
+using Test;
 
-Person person = new Person();
-person.Name = "张三";
-person.Age = 20;
-person.Marriage = true;
+namespace Protobuf
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person person = new Person();
+            person.Name = "张三";
+            person.Age = 20;
+            person.Marriage = true;
 
-// 序列化
-byte[] buffer = person.ToByteArray();
+            // 序列化
+            byte[] buffer = person.ToByteArray();
 
-// 反序列化
-Person p = Person.Parser.ParseFrom(buffer);
+            foreach (byte b in buffer)
+            {
+                Console.Write(b.ToString("X2") + " ");
+            }
+            Console.WriteLine();
+
+            // 反序列化
+            Person p = Person.Parser.ParseFrom(buffer);
+
+            Console.WriteLine(string.Format("Name: {0}, Age: {1}, Marriage: {2}", p.Name, p.Age, p.Marriage));
+
+            Console.Read();
+        }
+    }
+}
 ```
+
+**输出：**
+```
+0A 06 E5 BC A0 E4 B8 89 10 14 18 01
+Name: 张三, Age: 20, Marriage: True
+```
+
+>比较一下 Python 的输出，好像不一样，Python 中第一个字节是 \n，而这里是 0A。\n 在 ASCII 中的值就是 0A。所以两种语言的序列化结果是一样的。
+
