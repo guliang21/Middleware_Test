@@ -1,7 +1,7 @@
 [TOC]
 
-## 一、简介
-Protobuf（Protocol Buffers），是 google 开发的一种跨语言、跨平台的可扩展机制，用于序列化结构化数据
+## 01| 简介
+Protobuf（Protocol Buffers），是 Google 开发的一种跨语言、跨平台的可扩展机制，用于序列化结构化数据。
 
 与 XML 和 JSON 格式相比，protobuf 更小、更快、更便捷。protobuf 目前支持 C++、Java、Python、Objective-C，如果使用 proto3，还支持 C#、Ruby、Go、PHP、JavaScript 等语言。
 
@@ -17,7 +17,8 @@ GitHub 地址：[https://github.com/protocolbuffers/protobuf](https://github.com
 - 二进制格式可读性差：为了提高性能，protobuf 采用了二进制格式进行编码，这直接导致了可读性差。
 - 缺乏自描述：XML 是自描述的，而 protobuf 不是，不配合定义的结构体是看不出来什么作用的。
 
-## Windows 下安装
+## 02| 安装
+### 2.1 Windows 下安装
 下载地址：[https://github.com/protocolbuffers/protobuf/releases](https://github.com/protocolbuffers/protobuf/releases)
 
 下载 protoc-3.9.1-win64.zip，这个是编译后的压缩包，相当于绿色版，解压后，将其下的 bin 目录添加到环境变量就可以了，省去了安装的麻烦。
@@ -33,13 +34,13 @@ protoc --version
 ![protobuf 安装（1）.png](https://upload-images.jianshu.io/upload_images/14733701-f38d32d1f6f9c53c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-## 二、使用
+## 03| 简单使用
 
-### 1、编译
+### 3.1 编译
 使用 protobuf 首先需要定义 .proto 文件，先来看一个简单的例子。
 
 定义 Person.proto 文件，内容如下：
-```
+```protobuf
 syntax = "proto3";
 package Test;
 
@@ -49,27 +50,31 @@ message Person {
   bool Marriage = 3;
 }
 ```
+
 - `syntax = "proto3";` 指定正在使用 proto3 语法，否则 protobuf 将默认使用的是 proto2。
-- `package Test;` 指定命名空间。
-- `message` 是关键字，
-- 
+- `package Test;` 指定命名空间（C# 中）。
+- `message` 是关键字，定义结构化数据。
+- 等号后面的数字是字段唯一编号（**注意不是字段的值**），用于二进制格式消息中标识字段。
 
 **protoc 是 protobuf 自带的编译器**，可以将 .proto 文件编译成 java、python、go、C# 等多种语言的代码，直接引用。
 
+**编译命令：**
 ```
 protoc -I=E:\GL\Test2017 --python_out=E:\GL\Test2017 Person.proto
 ```
+
+**编译命令说明：**
 - -I 表示源文件（.proto 文件）所在文件夹路径。
 - --python_out 表示目标语言为 python，且指定生成的 .py 文件存放目录。相应的，C# 为 csharp_out，
 - Person.proto 为源文件文件名，如果有多个，空格隔开。
 
 
-### 2、Python
+### 3.2 Python 示例
 安装 `protobuf`。
 
-Person.proto，编译后生成文件：`Person_pb2.py`，添加至项目中，序列化和反序列化示例如下：
+调用编译命令编译 Person.proto，编译后生成文件：`Person_pb2.py`，添加至项目中，序列化和反序列化示例如下：
 
-```
+```python
 import Person_pb2
 
 person = Person_pb2.Person()
@@ -94,11 +99,11 @@ Name: 张三; Age: 20; Marriage: True
 ```
 
 注意，不能这样写，这是错误的：
-```
+```python
 p = Person_pb2.Person().ParseFromString(b)
 ```
 
-### 3、C#
+### 3.3 C# 示例
 
 C# 下的 Protobuf 有 3 个版本：
 - Google.ProtoBuf：Google官方版本，[https://github.com/google/protobuf/tree/master/csharp](https://github.com/google/protobuf/tree/master/csharp)
@@ -109,8 +114,7 @@ C# 下的 Protobuf 有 3 个版本：
 
 在 VS 中，通过 NuGet 安装 'google.protobuf' 包。
 
-
-```
+```c#
 using Google.Protobuf;
 using System;
 using Test;
