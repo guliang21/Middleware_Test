@@ -1,4 +1,5 @@
 /CSharp/.vs
+/CSharp/packages
 /Python/.idea
 bin
 obj
